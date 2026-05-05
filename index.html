@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mammus Mattress | Buy Premium Memory Foam Mattress.</title>
+    <link rel="icon" type="image/png" href="M.png">
+
+    <title>Mammus Mattress | Premium Orthopedic & Cooling Sleep</title>
+    <meta name="description" content="Buy premium memory foam mattresses designed by industry experts. Adapted to Indian sleep patterns with award-winning comfort. Shop Mammus today!">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     
     <style>
@@ -114,14 +117,45 @@
             line-height: 1.2;
             margin-bottom: 20px;
             color: var(--text-dark);
-            white-space: nowrap; 
+            /* Removed white-space: nowrap to allow the longer text to wrap naturally */
         }
         .hero-content p {
             font-size: 1.2rem;
             color: var(--text-light);
-            margin-bottom: 30px;
+            margin-bottom: 25px;
             max-width: 450px;
         }
+
+        /* Hero Trust List Styles */
+        .hero-trust-list {
+            list-style: none;
+            margin-bottom: 30px;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .hero-trust-list li {
+            font-size: 1.1rem;
+            color: var(--text-dark);
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .check-icon {
+            color: #8FA082; 
+            font-weight: 700;
+            font-size: 1.2rem;
+            background: #e8ede4;
+            width: 24px;
+            height: 24px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+
         .btn-primary {
             display: inline-block;
             background-color: #8FA082; /* Sage Green */
@@ -474,8 +508,6 @@
         Offer: Use Code <span>MAMMUS50</span> on WhatsApp | Next-Day Delivery
     </div>
 
-
-
     <!-- Section 1 -->
     <header id="section-1">
         <div class="nav-container">
@@ -485,7 +517,7 @@
             <div class="nav-links">
                 <a href="#shop">Our Mattresses</a>
                 <a href="#technology">Technology</a>
-                <a href="https://wa.me/971502074757" target="_blank">Contact Us</a>
+                <a href="https://wa.me/918086931918" target="_blank">Contact Us</a>
             </div>
         </div>
     </header>
@@ -501,12 +533,29 @@
     <section id="section-2">
         <div class="hero">
             <div class="hero-content">
-                <h1>Better sleep.<br>Better every day.</h1>
-                <p>Engineered for comfort. Designed for life. Wake up refreshed with a priceless smile, delivered straight to your door.</p>
+                <!-- SEO Optimized H1 -->
+                <h1>Premium Memory Foam Mattresses.</h1>
+                
+                <!-- Marketing hook -->   
+                <p>Unroll premium memory foam comfort and wake up refreshed, delivered straight to your door.</p>
+                
+                <!-- High-conversion trust signals -->
+                <ul class="hero-trust-list">
+                    <li><span class="check-icon">✓</span> Designed by Industry Experts</li>
+                    <li><span class="check-icon">✓</span> Adapted to Sleep Patterns</li>
+                    <li><span class="check-icon">✓</span> Designed to last a Lifetime</li>
+                    <li><span class="check-icon">✓</span> Award-winning Comfort</li>
+                </ul>
+
                 <a href="#section-4" class="btn-primary">Shop The Collection</a>
             </div>
             <div class="hero-visual">
-                <img src="img01.png" alt="Mammus Mattress">
+                <!-- autoplay, muted, and playsinline are required for browsers to allow automatic video playback -->
+                <video id="heroLoopVideo" autoplay muted playsinline>
+                    <source src="V01.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+
             </div>
         </div>
 
@@ -671,7 +720,7 @@
                 <div class="help-info">
                     <h4>Call Us</h4>
                     <p>We're here to answer all things sleep.</p>
-                    <a href="tel:+971502074757">Call Now</a>
+                    <a href="tel:+918086931918">Call Now</a>
                 </div>
             </div>
 
@@ -680,7 +729,7 @@
                 <div class="help-info">
                     <h4>Chat with Us</h4>
                     <p>Chat with us directly on Whatsapp.</p>
-                    <a href="https://wa.me/971502074757?text=Hi%20Mammus,%20I%20need%20help%20choosing%20a%20mattress!" target="_blank">Chat with us</a>
+                    <a href="https://wa.me/918086931918?text=Hi,%20I%20would%20like%20to%20Enquire%20about%20Mammus%20Mattress." target="_blank">Chat with us</a>
                 </div>
             </div>
 
@@ -701,11 +750,12 @@
         <p style="margin-top: 10px; font-size: 0.8rem; opacity: 0.7;">&copy; 2026 Mammus Mattress. All rights reserved.</p>
     </footer>
 
-    <a href="https://wa.me/971502074757?text=Hi,%20I%20have%20a%20question%20about%20your%20mattresses!" target="_blank" class="float-wa">
+    <a href="https://wa.me/918086931918?text=Hi,%20I%20would%20like%20to%20Enquire%20about%20Mammus%20Mattress." target="_blank" class="float-wa">
         💬
     </a>
 
     <script>
+        // Existing Scroll Restoration
         if ('scrollRestoration' in history) {
             history.scrollRestoration = 'manual';
         }
@@ -713,6 +763,41 @@
         window.onload = function() {
             window.scrollTo(0, 0);
         };
+
+        // Video Looping Logic
+        document.addEventListener('DOMContentLoaded', function() {
+            const video = document.getElementById('heroLoopVideo');
+            let currentVid = 1;
+            const maxVids = 5;
+
+            // Triggered when a video successfully finishes playing
+            video.addEventListener('ended', function() {
+                currentVid++;
+                
+                // If we exceed the maximum allowed videos (5), reset to 1
+                if (currentVid > maxVids) {
+                    currentVid = 1; 
+                }
+                
+                video.src = 'V0' + currentVid + '.mp4';
+                video.play();
+            });
+
+            // Triggered if a video file is missing/not found in the folder
+            video.addEventListener('error', function() {
+                // Safety check: if V01 is missing, stop to prevent an infinite crash loop
+                if (currentVid === 1) {
+                    console.error("V01.mp4 is missing. Cannot start the video loop.");
+                    return; 
+                }
+                
+                // The file was missing, so we've reached the end of available videos. 
+                // Loop smoothly back to the first video.
+                currentVid = 1;
+                video.src = 'V01.mp4';
+                video.play();
+            });
+        });
     </script>
 
 </body>
